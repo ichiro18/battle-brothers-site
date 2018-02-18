@@ -1,0 +1,13 @@
+{
+  "name": "BBK",
+  "version": "0.0.1",
+  "description": "Site for a battlebrotherhood at Kirov city",
+  "main": "index.js",
+  "repository": "https://github.com/ichiro18/battle-brothers-site.git",
+  "author": "Asherios <Dendenel@yandex.ru>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^3.0.2"
+  }
+}
