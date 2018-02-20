@@ -25,7 +25,7 @@ const common = merge([
             'index': PATHS.source + '/pug/pages/index.pug',
         },
         output: {
-            path: PATHS.public,
+            path: PATHS.build,
             filename: './dist/js/index.js'
         },
     },
@@ -44,7 +44,7 @@ const production = merge(
 const development = merge(
     common,
     //cssDev(),
-    devserver(PATHS.public)
+    devserver(PATHS.build)
 );
 
 // ==============  Запускаем разные сценарии сборки dev/prod ==================
