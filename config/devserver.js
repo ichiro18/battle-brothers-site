@@ -1,16 +1,12 @@
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+//const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-module.exports = function() {
+module.exports = function(path) {
     return {
-        plugins:[
-            new BrowserSyncPlugin({
-                host: 'localhost',
-                port: 3000,
-                proxy: 'http://localhost:9000/'
-            },
-            {
-                reload: true
-            })
-        ]
+        devServer: {
+            stats: 'errors-only',
+            contentBase: path,
+            compress: true,
+            port: 9000
+          }
     };
 };
