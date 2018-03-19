@@ -26,25 +26,54 @@
             <a href="#"><i class="fa fa-youtube"></i></a>
         </div>
     </div>
-    <div class="main-menu">
+    <div class="main-menu" role="navigation">
         <?php
             if (has_nav_menu('primary_navigation')){
-                wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
+                $args_menu = array(
+	                'theme_location' => 'primary_navigation',
+                    'menu_class' => 'nav',
+                    'after' => '<i class="fa fa-chevron-right submenu-lvl pull-right" aria-hidden="true"></i>'
+                );
+                wp_nav_menu($args_menu);
             }
         ?>
     </div>
 </div>
-
-<!--<header class="banner">-->
-<!--  <div class="container">-->
-<!--      <h1>HEADER</h1>-->
-<!--    <a class="brand" href="--><?//= esc_url(home_url('/')); ?><!--">--><?php //bloginfo('name'); ?><!--</a>-->
-<!--    <nav class="nav-primary">-->
-<!--      --><?php
-//      if (has_nav_menu('primary_navigation')) :
-//        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-//      endif;
-//      ?>
-<!--    </nav>-->
-<!--  </div>-->
-<!--</header>-->
+<div class="extended-navigation">
+    <div class="container">
+        <div class="category-group-list">
+		    <?php
+		    $args = array(
+			    'show_option_all'    => '',
+			    'show_option_none'   => __('No categories'),
+			    'orderby'            => 'name',
+			    'order'              => 'ASC',
+			    'show_last_update'   => 0,
+			    'style'              => 'list',
+			    'show_count'         => 0,
+			    'hide_empty'         => 0,
+			    'use_desc_for_title' => 1,
+			    'child_of'           => 0,
+			    'feed'               => '',
+			    'feed_type'          => '',
+			    'feed_image'         => '',
+			    'exclude'            => '',
+			    'exclude_tree'       => '',
+			    'include'            => '',
+			    'hierarchical'       => false,
+			    'title_li'           => '',
+			    'number'             => NULL,
+			    'echo'               => 1,
+			    'depth'              => 0,
+			    'current_category'   => 0,
+			    'pad_counts'         => 0,
+			    'taxonomy'           => 'category',
+			    'walker'             => 'Walker_Category',
+			    'hide_title_if_empty' => true,
+			    'separator'          => '<br />',
+		    );
+		    wp_list_categories($args);
+		    ?>
+        </div>
+    </div>
+</div>

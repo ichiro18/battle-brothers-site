@@ -18,10 +18,28 @@
     // All pages
     'common': {
       init: function() {
-        // JavaScript to be fired on all pages
+        $('.main-menu-link').on('click', function (event) {
+            event.preventDefault();
+            var menu = $('.main-menu');
+            if (menu.hasClass("active")){
+              menu.removeClass("active");
+            } else {
+              menu.addClass("active");
+            }
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+        $('.menu-item-has-children').find('i.submenu-lvl').click(
+            function () {
+                var submenu = $(this).parents('ul').find('ul.sub-menu');
+                if (submenu.hasClass('active')){
+                  submenu.removeClass('active');
+                } else {
+                  submenu.addClass('active');
+                }
+            }
+        );
       }
     },
     // Home page
@@ -74,4 +92,7 @@
   // Load Events
   $(document).ready(UTIL.loadEvents);
 
+  $.fn.mouseIsOver = function () {
+      return $(this).parent().find($(this).selector + ":hover").length > 0;
+  };
 })(jQuery); // Fully reference jQuery after this point.
