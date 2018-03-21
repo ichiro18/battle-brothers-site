@@ -1,0 +1,25 @@
+.wrapper{
+  .page-title{
+    border-bottom: 1px solid #c9c9c9;
+    font-size: 40px;
+    line-height: 46px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .main-content{
+    max-width: 100%;
+    float: left;
+    ul.child-nav{
+      padding-left: 0;
+      li{
+        list-style: none;
+        margin-bottom: 1em;
+        a{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

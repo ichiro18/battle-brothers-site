@@ -23,6 +23,7 @@
             var menu = $('.main-menu');
             if (menu.hasClass("active")){
               menu.removeClass("active");
+              menu.find('ul.sub-menu').removeClass('active');
             } else {
               menu.addClass("active");
             }

@@ -1,0 +1,21 @@
+.page-wrapper{
+  .sidebar{
+    display: flex;
+    float: right;
+    flex-direction: column;
+    width: 350px;
+    padding-left: 30px;
+    padding-right: 0;
+    border-left: 1px solid #c9c9c9;
+    .widget_media_video{
+      display: flex;
+      flex-direction: column-reverse;
+      h3{
+        font-size: 15px;
+        line-height: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    }
+  }
+}
