@@ -13,7 +13,6 @@ $posts_query = new WP_Query(array(
 ));
 ?>
 <div class="wrapper">
-  <pre><?php var_dump($posts_query); ?></pre>
   <h3 class="page-title"><?php single_cat_title(); ?></h3>
   <?php
     $term_description = term_description();
@@ -28,7 +27,6 @@ $posts_query = new WP_Query(array(
         <?php if ($posts_query->have_posts()) { ?>
 	        <?php
                 $posts = $posts_query->posts;
-//                var_dump($posts);
 	        ?>
             <div class="posts-easy-grid">
                 <?php foreach ($posts as $post) { ?>
