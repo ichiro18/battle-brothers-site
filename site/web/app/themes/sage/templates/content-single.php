@@ -1,15 +1,24 @@
+<div class="wrapper">
 <?php while (have_posts()) : the_post(); ?>
-  <article <?php post_class(); ?>>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
-    </header>
-    <div class="entry-content">
-      <?php the_content(); ?>
+    <h3 class="page-title"><?php the_title(); ?></h3>
+    <div class="page-wrapper">
+        <div class="main-content <?php if (is_active_sidebar( 'sidebar-primary' )){ echo "active-sidebar";}; ?>">
+            <div class="post-single">
+                <div class="post-image">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+                <div class="post-date">
+                    <?php get_template_part('templates/entry-meta'); ?>
+                </div>
+                <div class="post-content">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
+	    <?php
+	        get_template_part("templates/sidebar");
+	    ?>
     </div>
-    <footer>
-      <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-    </footer>
-    <?php comments_template('/templates/comments.php'); ?>
-  </article>
+</div>
 <?php endwhile; ?>
+</div>

@@ -55,4 +55,18 @@
       }
     }
   }
+  .post-single{
+    .post-image{
+      img{
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .post-date{
+      font-size: 12px;
+      color: #979797;
+      text-align: right;
+      margin-bottom: 15px;
+    }
+  }
 }

@@ -5,15 +5,21 @@
 ?>
 
 <?php
-$category_id = get_the_ID();
+$category = get_queried_object();
+$category_id = $category->term_id;
 $posts_query = new WP_Query(array(
 	'post_type'=>'post',
 	'post_status'=>'publish',
-	'posts_per_page'=>10
+	'posts_per_page'=>10,
+    'category__in' => $category_id,
 ));
 ?>
 <div class="wrapper">
-  <h3 class="page-title"><?php single_cat_title(); ?></h3>
+  <h3 class="page-title">
+      <?php
+        single_cat_title();
+      ?>
+  </h3>
   <?php
     $term_description = term_description();
     if (!empty($term_description)) {
